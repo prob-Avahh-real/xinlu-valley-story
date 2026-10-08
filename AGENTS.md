@@ -1,20 +1,41 @@
-# AGENTS.md — xinlu_grain_valley
+# 芯麓谷物语
 
-芯麓谷物语 — 移动端像素风农场模拟 RPG
+芯麓谷物语 (Xinlu Grain Valley) A pixel-art farming simulation RPG for mobile, inspired by Stardew Valley. Tech Stack - **Framework:** Flutter + Dart - **Game Engine:** Flame + Bonfire - **State Management:** Provider - **Persistence:** Hive, SharedPreferences
+
+## 用途与 Target 判定
+
+Flutter / Expo 工程（已归档）
+
+- 移动端：需要
+- 智能硬件：可选（可搁置）
+
+## 目标平台
+
+| 平台 | 方式 | 产出 |
+|------|------|------|
+| 移动端 | Flutter | APK / IPA |
+| 智能硬件 | 可选 | — |
+
+## 技术栈信号
+
+- 检测到：android, flutter, ios
 
 ## 命令
+
 ```bash
-make test          # flutter test
-make analyze       # flutter analyze
-make format        # dart format .
-make build-android # flutter build apk --release
-make gen           # dart run build_runner build --delete-conflicting-outputs\nmake run           # flutter run
+flutter pub get
+flutter run
+flutter test
 ```
 
-## 技术栈
-Flutter / Dart 3.12+
+## 状态
 
-## 约定
-- Lint: flutter_lints + 自定义规则
-- 测试文件在 `test/` 目录
-- Service 层返回 Result<T>
+已归档。默认只做必要修复与知识库同步，不新开大范围需求。
+
+## 助手约束
+
+- Loop：先定可验证 Done 与停止条件；每切片过验证环；失败回灌；详见 docs/LOOP_ENGINEERING.md
+- Harness：遵循根 AGENTS「Harness Engineering」；Guide=本文件，Sensor=测试/CI；同类失误二次须沉淀规则或测试（棘轮）。详见 docs/HARNESS_ENGINEERING.md
+- 遵循仓库根 `/Users/skat/AGENTS.md` 与本文件的用途判定
+- 可选 Target 可搁置；不适用形态不要硬加
+- 改动聚焦；公共逻辑抽离复用
